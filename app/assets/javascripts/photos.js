@@ -1,15 +1,8 @@
 var req = new XMLHttpRequest();
 var listener;
 
-$(document).ready(function() {  
-	// $(function(){
-	// 
-	//     $(".hero-unit").jPages({
-	//         containerID : "pics"
-	//     });
-	// 
-	// });
-	// 
+$(document).ready(function() {  	
+	
 	$(".btn#pics").click(function(){
 		var text;
 		if($("#input").val() == ""){
@@ -38,16 +31,19 @@ $(document).ready(function() {
 
 function showPhotos() {
 	var photos = req.responseXML.getElementsByTagName("photo");
-	$(".pics").empty()
+	$("#page_container .content").empty()
   	for (var i = 0, photo; photo = photos[i]; i++) {
     	var img = document.createElement("image");
     	img.src = constructImageURL(photo);
-    	$(".pics").append(img);
+    	$("#page_container .content").append(img);
   	}		
 	
-	listener = $(".pics img").click(function(){
-		alert("success!");
-	});
+	$('#page_container').pajinate();
+	
+	// 
+	// listener = $(".content img").click(function(){
+	// 	popModal;
+	// });
 }
 // See: http://www.flickr.com/services/api/misc.urls.html
 function constructImageURL(photo) {

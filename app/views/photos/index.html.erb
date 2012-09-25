@@ -1,10 +1,33 @@
 <h1>flickr_search</h1>
+<div id="boxes">
+ 
+     
+    <!-- #customize your modal window here -->
+ 
+    <div id="dialog" class="window">
+        <b>Testing of Modal Window</b> | 
+         
+        <!-- close button is defined as close class -->
+        <a href="#" class="close">Close it</a>
+ 
+    </div>
+ 
+     
+    <!-- Do not remove div#mask, because you'll need it to fill the whole screen --> 
+    <div id="mask"></div>
+</div>
 <!-- <form class="form-search"> -->
 <input type="text" class="input-medium search-query" id="input">
 <button type="submit" class="btn" id="pics">Search</button>
+<button type="submit" class="mask">Mask</button>
+
 <!-- </form> -->
-<div class="pics">
-	<div class="page_navigation"></div>
+<div id="page_container">
+	
 	<ul class="content">
 	</ul>
+	
+	<div class="page_navigation"></div>
+	
 </div>
+

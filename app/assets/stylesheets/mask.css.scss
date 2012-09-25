@@ -1,12 +1,3 @@
-// Place all the styles related to the Photos controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-div img {
-	padding: 5px;
-	cursor: pointer;
-}
-
 /* Z-index of #mask must lower than #boxes .window */
 #mask {
   position:absolute;
@@ -30,4 +21,6 @@ div img {
 	width:375px; 
   	height:203px;
   	background: white;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
 }

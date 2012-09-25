@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require pajinate/jquery.pajinate.js
 //= require_tree .
