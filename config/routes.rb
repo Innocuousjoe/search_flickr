@@ -1,6 +1,6 @@
 SearchFlickr::Application.routes.draw do
   get "photos/index"
-
+  root to: "photos#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
