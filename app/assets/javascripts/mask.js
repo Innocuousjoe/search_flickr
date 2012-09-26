@@ -2,7 +2,7 @@ var popModal;
 
 $(document).ready(function() {  
  
-    popModal = function(){
+    popModal = function(url){
       
       var id = $('#dialog');
    
@@ -24,7 +24,10 @@ $(document).ready(function() {
       //Set the popup window to center
       $(id).css('top',  winH/2-$(id).height()/2);
       $(id).css('left', winW/2-$(id).width()/2);
-   
+	  var img = document.createElement("image");
+  	  img.src = url;
+	  $('#dialog').empty();
+	  $('#dialog').append(img);
       //transition effect
       $(id).fadeIn(0);
     }
@@ -32,10 +35,7 @@ $(document).ready(function() {
     //select all the a tag with name equal to modal
    	
     $("#content.overlay").click(function(e){e.preventDefault(); popModal();})
-	
-	$(".mask").click(function(e){
-		popModal();
-	});
+
     //if close button is clicked
     $('.window .close').click(function (e) {
         //Cancel the link behavior
