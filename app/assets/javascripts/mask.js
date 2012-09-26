@@ -1,6 +1,8 @@
+var popModal;
+
 $(document).ready(function() {  
  
-    var popModal = function(){
+    popModal = function(){
       
       var id = $('#dialog');
    
