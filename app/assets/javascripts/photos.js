@@ -41,9 +41,10 @@ function showPhotos() {
 	$('#page_container').pajinate();
 	
 	
-	listener = $(".content img").click(function(){
-		popModal;
-	});
+	// $(".content img").click(function(){
+	// 		popModal();
+	// 		console.log($(this));
+	// 	});
 }
 // See: http://www.flickr.com/services/api/misc.urls.html
 function constructImageURL(photo) {
