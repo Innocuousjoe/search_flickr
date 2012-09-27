@@ -1,5 +1,6 @@
 var req = new XMLHttpRequest();
 var listener;
+var info;
 
 $(document).ready(function() {  	
 	
@@ -34,7 +35,17 @@ function showPhotos() {
   	for (var i = 0, photo; photo = photos[i]; i++) {
     	var img = document.createElement("image");
     	img.src = constructImageURL(photo, "s");
+		console.log(photo.getAttribute("id"))
     	$("#page_container .content").append(img);
+		req.open(
+			"GET",
+			"http://api.flickr.com/services/rest/?" +
+		   	"method=flickr.photos.getInfo&" +
+		    "api_key=183d07d8ed01de504b1bf7f2ab0cc4f5&"+
+			"photo_id=" + photo.getAttribute("id"),
+		    true);
+		req.onload = setInfo;
+		req.send(null);
   	}		
 	
 	$('#page_container').pajinate();
@@ -43,6 +54,10 @@ function showPhotos() {
 	listener = $(".content img").click(function(){
 		popModal($(this)[0].src.replace("s.jpg", "n.jpg"));
 	});
+}
+
+function setInfo() {
+	console.log(req.responseXML);
 }
 // See: http://www.flickr.com/services/api/misc.urls.html
 function constructImageURL(photo, size) {
